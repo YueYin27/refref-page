@@ -139,57 +139,70 @@
         </div>
       </div>
     </div>
+    <div class="has-text-centered" style="margin-top:2em;">
+      <img src="./static/images/method.png" alt="Method Teaser" style="max-width:100%; border:1px solid #ccc; border-radius:8px;">
+    </div>
     <!--/ Abstract. -->
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Novel View Synthesis Results</h2>
-    <h3 class="title is-4">Oracle Method</h3>
-    <div class="results-carousel">
-      <div class="item">
-        <video controls playsinline loop style="width:100%;">
-          <source src="./static/videos/videos_oracle/oracle_ball.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="item">
-        <video controls playsinline loop style="width:100%;">
-          <source src="./static/videos/videos_oracle/oracle_dog.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="item">
-        <video controls playsinline loop style="width:100%;">
-          <source src="./static/videos/videos_oracle/oracle_torus.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="item">
-        <video controls playsinline loop style="width:100%;">
-          <source src="./static/videos/videos_oracle/oracle_diffuser.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="item">
-        <video controls playsinline loop style="width:100%;">
-          <source src="./static/videos/videos_oracle/oracle_ampoule.mp4" type="video/mp4">
-        </video>
+<!-- Oracle Results -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-4 has-text-centered" style="margin-bottom:1em;">Oracle Results</h2>
+      <div id="oracle-carousel" class="carousel results-carousel">
+        <div class="item item-oracle-ball">
+          <video poster="" id="oracle-ball" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/videos_oracle/Oracle_ball.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-oracle-dog">
+          <video poster="" id="oracle-dog" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/videos_oracle/Oracle_dog.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-oracle-ampoule">
+          <video poster="" id="oracle-ampoule" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/videos_oracle/Oracle_ampoule.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-oracle-torus">
+          <video poster="" id="oracle-torus" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/videos_oracle/Oracle_torus.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-oracle-diffuser">
+          <video poster="" id="oracle-diffuser" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/videos_oracle/Oracle_diffuser.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
-    <h3 class="title is-4" style="margin-top:2em;">R3F Method</h3>
-    <div class="results-carousel">
-      <div class="item">
-        <video controls playsinline loop style="width:100%;">
-          <source src="./static/videos/videos_ours/ours_ball.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="item">
-        <video controls playsinline loop style="width:100%;">
-          <source src="./static/videos/videos_ours/ours_dog.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="item">
-        <video controls playsinline loop style="width:100%;">
-          <source src="./static/videos/videos_ours/ours_torus.mp4" type="video/mp4">
-        </video>
+  </div>
+</section>
+
+<!-- R3F Results -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-4 has-text-centered" style="margin-bottom:1em;">R3F Results</h2>
+      <div id="r3f-carousel" class="carousel results-carousel">
+        <div class="item item-ours-ball">
+          <video poster="" id="ours-ball" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/videos_ours/ours_ball.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-ours-dog">
+          <video poster="" id="ours-dog" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/videos_ours/ours_dog.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-ours-torus">
+          <video poster="" id="ours-torus" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/videos_ours/ours_torus.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
   </div>
@@ -198,8 +211,8 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (window.bulmaCarousel) {
-      bulmaCarousel.attach('#oracle-carousel', { slidesToScroll: 1, slidesToShow: 1, loop: true });
-      bulmaCarousel.attach('#r3f-carousel', { slidesToScroll: 1, slidesToShow: 1, loop: true });
+      bulmaCarousel.attach('#oracle-carousel', { slidesToScroll: 1, slidesToShow: 2, loop: true });
+      bulmaCarousel.attach('#r3f-carousel', { slidesToScroll: 1, slidesToShow: 2, loop: true });
     }
   });
 </script>
