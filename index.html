@@ -34,6 +34,13 @@
       font-size: 2.5rem !important;
       font-family: 'Castoro', sans-serif !important;
     }
+    /* Adjust dots position */
+    .carousel .carousel-indicator {
+      margin-top: 0.5em !important;
+    }
+    .carousel .carousel-indicator .indicator-item {
+      padding: 4px !important;
+    }
   </style>
 </head>
 <body>
@@ -118,11 +125,51 @@
   </div>
 </section>
 
+
+<section class="hero is-light is-small">
+  <div class="hero-body" style="padding: 1rem 0;">
+    <div class="container" style="max-width: 900px; position: relative;">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-ball">
+          <video poster="" id="ball" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ball.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-cube">
+          <video poster="" id="cube" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/cube.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-cylinder">
+          <video poster="" id="cylinder" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/cylinder.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-torus">
+          <video poster="" id="torus" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/torus.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-ampoule">
+          <video poster="" id="ampoule" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ampoule.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-beaker">
+          <video poster="" id="beaker" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/beaker.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container" style="max-width: 900px;">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
@@ -140,85 +187,125 @@
       </div>
     </div>
     <div class="has-text-centered" style="margin-top:2em;">
-      <img src="./static/images/method.png" alt="Method Teaser" style="max-width:100%; border:1px solid #ccc; border-radius:8px;">
+      <img src="./static/images/method.svg" alt="Method Teaser" style="max-width:100%;">
     </div>
     <!--/ Abstract. -->
   </div>
 </section>
 
-<!-- Oracle Results -->
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-4 has-text-centered" style="margin-bottom:1em;">Oracle Results</h2>
-      <div id="oracle-carousel" class="carousel results-carousel">
-        <div class="item item-oracle-ball">
-          <video poster="" id="oracle-ball" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/videos_oracle/oracle_ball.mp4" type="video/mp4">
-          </video>
+<section class="section">
+  <div class="container" style="max-width: 900px;">
+    <h2 class="title is-3">Visual Comparisons</h2>
+    <div class="content has-text-justified">
+      <p>
+      </p>
+    </div>
+    <div class="columns is-centered">
+      <!-- Left Column -->
+      <div class="column">
+        <div class="content">
+          <div class="columns is-centered">
+            <div class="column is-full-width">
+              <div id="comparison1" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="static/images/cube_oracle.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    Ours
+                  </div>
+                </div>
+                <div class="bal-before" style="width: 50%;">
+                  <div class="bal-before-inset">
+                    <img src="static/images/cube_zip.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Method A
+                    </div>
+                  </div>
+                </div>
+                <div class="bal-handle" style="left: 50%;">
+                  <span class="handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+              </div>
+
+              <div id="comparison2" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="static/images/cube_oracle.png">
+                  <div class="bal-afterPosition afterLabel">
+                    Ours
+                  </div>
+                </div>
+                <div class="bal-before" style="width: 50%;">
+                  <div class="bal-before-inset">
+                    <img src="static/images/cube_zip.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Method B
+                    </div>
+                  </div>
+                </div>
+                <div class="bal-handle" style="left: 50%;">
+                  <span class="handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="item item-oracle-dog">
-          <video poster="" id="oracle-dog" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/videos_oracle/oracle_dog.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-oracle-ampoule">
-          <video poster="" id="oracle-ampoule" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/videos_oracle/oracle_ampoule.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-oracle-torus">
-          <video poster="" id="oracle-torus" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/videos_oracle/oracle_torus.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-oracle-diffuser">
-          <video poster="" id="oracle-diffuser" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/videos_oracle/oracle_diffuser.mp4" type="video/mp4">
-          </video>
+      </div>
+
+      <!-- Right Column -->
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <div id="comparison3" class="bal-container-small">
+              <div class="bal-after">
+                <img src="static/images/cube_oracle.png">
+                <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                  Ours
+                </div>
+              </div>
+              <div class="bal-before" style="width: 50%;">
+                <div class="bal-before-inset">
+                  <img src="static/images/cube_zip.png">
+                  <div class="bal-beforePosition beforeLabel">
+                    Method C
+                  </div>
+                </div>
+              </div>
+              <div class="bal-handle" style="left: 50%;">
+                <span class="handle-left-arrow"></span>
+                <span class="handle-right-arrow"></span>
+              </div>
+            </div>
+
+            <div id="comparison4" class="bal-container-small">
+              <div class="bal-after">
+                <img src="static/images/cube_oracle.png">
+                <div class="bal-afterPosition afterLabel">
+                  Ours
+                </div>
+              </div>
+              <div class="bal-before" style="width: 50%;">
+                <div class="bal-before-inset">
+                  <img src="static/images/cube_zip.png">
+                  <div class="bal-beforePosition beforeLabel">
+                    Method D
+                  </div>
+                </div>
+              </div>
+              <div class="bal-handle" style="left: 50%;">
+                <span class="handle-left-arrow"></span>
+                <span class="handle-right-arrow"></span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- R3F Results -->
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-4 has-text-centered" style="margin-bottom:1em;">R3F Results</h2>
-      <div id="r3f-carousel" class="carousel results-carousel">
-        <div class="item item-ours-ball">
-          <video poster="" id="ours-ball" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/videos_ours/ours_ball.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-ours-dog">
-          <video poster="" id="ours-dog" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/videos_ours/ours_dog.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-ours-torus">
-          <video poster="" id="ours-torus" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/videos_ours/ours_torus.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    if (window.bulmaCarousel) {
-      bulmaCarousel.attach('#oracle-carousel', { slidesToScroll: 1, slidesToShow: 2, loop: true });
-      bulmaCarousel.attach('#r3f-carousel', { slidesToScroll: 1, slidesToShow: 2, loop: true });
-    }
-  });
-</script>
 
 <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
+  <div class="container" style="max-width: 900px;">
     <h2 class="title">BibTeX</h2>
     <pre><code>@misc{yin2025refrefsyntheticdatasetbenchmark,
       title={RefRef: A Synthetic Dataset and Benchmark for Reconstructing Refractive and Reflective Objects}, 
@@ -260,6 +347,14 @@
     </div>
   </div>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.bulmaCarousel) {
+      bulmaCarousel.attach('#results-carousel', { slidesToScroll: 1, slidesToShow: 1, loop: true });
+    }
+  });
+</script>
 
 </body>
 </html>
