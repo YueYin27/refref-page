@@ -24,7 +24,7 @@
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+  <script src="./static/js/script.js"></script>
 
   <style>
     .author-block {
@@ -40,6 +40,30 @@
     }
     .carousel .carousel-indicator .indicator-item {
       padding: 4px !important;
+    }
+    /* Image comparison container styles */
+    .bal-container-small {
+      position: relative;
+      width: 100%;
+      max-width: 250px;  /* Increased from 200px */
+      margin: 0 auto;
+      cursor: col-resize;
+    }
+
+    .bal-after img,
+    .bal-before img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 250px;  /* Increased from 200px */
+      object-fit: cover;
+    }
+
+    /* Adjust label positions for containers */
+    .bal-afterPosition,
+    .bal-beforePosition {
+      font-size: 0.85em;  /* Slightly larger font */
+      padding: 5px 10px;  /* Slightly more padding */
     }
   </style>
 </head>
@@ -200,103 +224,96 @@
       <p>
       </p>
     </div>
+    <!-- Visual Effects. -->
     <div class="columns is-centered">
-      <!-- Left Column -->
-      <div class="column">
-        <div class="content">
-          <div class="columns is-centered">
-            <div class="column is-full-width">
-              <div id="comparison1" class="bal-container-small">
-                <div class="bal-after">
-                  <img src="static/images/cube_oracle.png">
-                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                    Ours
-                  </div>
-                </div>
-                <div class="bal-before" style="width: 50%;">
-                  <div class="bal-before-inset">
-                    <img src="static/images/cube_zip.png">
-                    <div class="bal-beforePosition beforeLabel">
-                      Method A
-                    </div>
-                  </div>
-                </div>
-                <div class="bal-handle" style="left: 50%;">
-                  <span class="handle-left-arrow"></span>
-                  <span class="handle-right-arrow"></span>
-                </div>
-              </div>
-
-              <div id="comparison2" class="bal-container-small">
-                <div class="bal-after">
-                  <img src="static/images/cube_oracle.png">
-                  <div class="bal-afterPosition afterLabel">
-                    Ours
-                  </div>
-                </div>
-                <div class="bal-before" style="width: 50%;">
-                  <div class="bal-before-inset">
-                    <img src="static/images/cube_zip.png">
-                    <div class="bal-beforePosition beforeLabel">
-                      Method B
-                    </div>
-                  </div>
-                </div>
-                <div class="bal-handle" style="left: 50%;">
-                  <span class="handle-left-arrow"></span>
-                  <span class="handle-right-arrow"></span>
-                </div>
+      <div class="column is-3">
+        <div id="example1" class="bal-container-small">
+          <div class="bal-after">
+            <img src="static/images/cube_oracle.png">
+            <div class="bal-afterPosition afterLabel" style="z-index:1;">
+              Oracle (Ours)
+            </div>
+          </div>
+          <div class="bal-before" style="width:50%;">
+            <div class="bal-before-inset" style="width: 200px;">
+              <img src="static/images/cube_tnsr.png">
+              <div class="bal-beforePosition beforeLabel">
+                TNSR
               </div>
             </div>
+          </div>
+          <div class="bal-handle" style="left:50%;">
+            <span class="handle-left-arrow"></span>
+            <span class="handle-right-arrow"></span>
           </div>
         </div>
       </div>
 
-      <!-- Right Column -->
-      <div class="column">
-        <div class="columns is-centered">
-          <div class="column content">
-            <div id="comparison3" class="bal-container-small">
-              <div class="bal-after">
-                <img src="static/images/cube_oracle.png">
-                <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                  Ours
-                </div>
-              </div>
-              <div class="bal-before" style="width: 50%;">
-                <div class="bal-before-inset">
-                  <img src="static/images/cube_zip.png">
-                  <div class="bal-beforePosition beforeLabel">
-                    Method C
-                  </div>
-                </div>
-              </div>
-              <div class="bal-handle" style="left: 50%;">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
+      <div class="column is-3">
+        <div id="example2" class="bal-container-small">
+          <div class="bal-after">
+            <img src="static/images/torus_oracle.png">
+            <div class="bal-afterPosition afterLabel">
+              Oracle (Ours)
+            </div>
+          </div>
+          <div class="bal-before" style="width:50%;">
+            <div class="bal-before-inset" style="width: 200px;">
+              <img src="static/images/torus_ms.png">
+              <div class="bal-beforePosition beforeLabel">
+                MS-NeRF
               </div>
             </div>
+          </div>
+          <div class="bal-handle" style="left:50%;">
+            <span class="handle-left-arrow"></span>
+            <span class="handle-right-arrow"></span>
+          </div>
+        </div>
+      </div>
 
-            <div id="comparison4" class="bal-container-small">
-              <div class="bal-after">
-                <img src="static/images/cube_oracle.png">
-                <div class="bal-afterPosition afterLabel">
-                  Ours
-                </div>
-              </div>
-              <div class="bal-before" style="width: 50%;">
-                <div class="bal-before-inset">
-                  <img src="static/images/cube_zip.png">
-                  <div class="bal-beforePosition beforeLabel">
-                    Method D
-                  </div>
-                </div>
-              </div>
-              <div class="bal-handle" style="left: 50%;">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
+      <div class="column is-3">
+        <div id="example4" class="bal-container-small">
+          <div class="bal-after">
+            <img src="static/images/cat_oracle.png">
+            <div class="bal-afterPosition afterLabel">
+              Oracle (Ours)
+            </div>
+          </div>
+          <div class="bal-before" style="width:50%;">
+            <div class="bal-before-inset" style="width: 200px;">
+              <img src="static/images/cat_ray.png">
+              <div class="bal-beforePosition beforeLabel">
+                Ray Deformation
               </div>
             </div>
+          </div>
+          <div class="bal-handle" style="left:50%;">
+            <span class="handle-left-arrow"></span>
+            <span class="handle-right-arrow"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-3">
+        <div id="example5" class="bal-container-small">
+          <div class="bal-after">
+            <img src="static/images/ampoule_oracle.png">
+            <div class="bal-afterPosition afterLabel">
+              Oracle (Ours)
+            </div>
+          </div>
+          <div class="bal-before" style="width:50%;">
+            <div class="bal-before-inset" style="width: 200px;">
+              <img src="static/images/ampoule_zip.png">
+              <div class="bal-beforePosition beforeLabel">
+                Zip-NeRF
+              </div>
+            </div>
+          </div>
+          <div class="bal-handle" style="left:50%;">
+            <span class="handle-left-arrow"></span>
+            <span class="handle-right-arrow"></span>
           </div>
         </div>
       </div>
@@ -347,14 +364,6 @@
     </div>
   </div>
 </footer>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    if (window.bulmaCarousel) {
-      bulmaCarousel.attach('#results-carousel', { slidesToScroll: 1, slidesToShow: 1, loop: true });
-    }
-  });
-</script>
 
 </body>
 </html>
