@@ -54,6 +54,45 @@ class BeforeAfter {
 
 // Initialize carousel when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
+    // Theme switcher
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const themeIcon = themeToggleBtn.querySelector('i');
+    const anuLogo = document.querySelector('img[alt="ANU Logo"]');
+    const methodFigure = document.querySelector('img[alt="Method Teaser"]');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            anuLogo.src = './static/images/ANU_dark.png';
+            methodFigure.src = './static/images/method_dark.svg';
+        }
+    }
+
+    function switchTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        if (newTheme === 'dark') {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            anuLogo.src = './static/images/ANU_dark.png';
+            methodFigure.src = './static/images/method_dark.svg';
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            anuLogo.src = './static/images/ANU_light.png';
+            methodFigure.src = './static/images/method_light.svg';
+        }
+    }
+
+    themeToggleBtn.addEventListener('click', switchTheme);
+
     // Initialize the carousel
     var carousel = bulmaCarousel.attach('#results-carousel', {
         slidesToScroll: 1,
@@ -114,7 +153,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Common font configuration
     const fontConfig = {
         family: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
-        size: 14
+        size: 14,
+        color: document.documentElement.getAttribute('data-theme') === 'dark' ? '#e0e0e0' : '#666'
     };
 
     // Add trophy to best method
@@ -132,8 +172,21 @@ document.addEventListener('DOMContentLoaded', function () {
         return label.includes('(Ours)') ? 'bold' : 'normal';
     };
 
+    // Function to update chart colors based on theme
+    function updateChartColors(chart) {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const textColor = isDark ? '#e0e0e0' : '#666';
+        
+        chart.options.scales.x.ticks.color = textColor;
+        chart.options.scales.y.ticks.color = textColor;
+        chart.options.scales.x.title.color = textColor;
+        chart.options.plugins.title.color = textColor;
+        
+        chart.update();
+    }
+
     // PSNR Chart
-    new Chart(document.getElementById('psnrChart').getContext('2d'), {
+    const psnrChart = new Chart(document.getElementById('psnrChart').getContext('2d'), {
         type: 'bar',
         data: {
             labels: addTrophyToBest(methods, [19.62, 19.53, 26.11, 18.64, 23.64, 23.13, 24.73, 29.34], true),
@@ -154,23 +207,32 @@ document.addEventListener('DOMContentLoaded', function () {
                     beginAtZero: false,
                     min: 15,
                     max: 30,
-                    grid: { display: false },
+                    grid: { 
+                        display: false,
+                        color: document.documentElement.getAttribute('data-theme') === 'dark' ? '#444' : '#ddd'
+                    },
                     title: {
                         display: true,
                         text: 'PSNR',
-                        font: fontConfig
+                        font: fontConfig,
+                        color: fontConfig.color
                     },
                     ticks: {
-                        font: fontConfig
+                        font: fontConfig,
+                        color: fontConfig.color
                     }
                 },
                 y: {
-                    grid: { display: false },
+                    grid: { 
+                        display: false,
+                        color: document.documentElement.getAttribute('data-theme') === 'dark' ? '#444' : '#ddd'
+                    },
                     ticks: {
                         font: {
                             ...fontConfig,
                             weight: (context) => getFontWeight(methods[context.index])
-                        }
+                        },
+                        color: fontConfig.color
                     }
                 }
             },
@@ -183,14 +245,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         ...fontConfig,
                         size: 16,
                         weight: 'bold'
-                    }
+                    },
+                    color: fontConfig.color
                 }
             }
         }
     });
 
     // Masked PSNR Chart
-    new Chart(document.getElementById('maskedPsnrChart').getContext('2d'), {
+    const maskedPsnrChart = new Chart(document.getElementById('maskedPsnrChart').getContext('2d'), {
         type: 'bar',
         data: {
             labels: addTrophyToBest(methods, [14.64, 14.87, 18.41, 11.14, 16.84, 17.38, 17.20, 21.75], true),
@@ -211,23 +274,32 @@ document.addEventListener('DOMContentLoaded', function () {
                     beginAtZero: false,
                     min: 10,
                     max: 25,
-                    grid: { display: false },
+                    grid: { 
+                        display: false,
+                        color: document.documentElement.getAttribute('data-theme') === 'dark' ? '#444' : '#ddd'
+                    },
                     title: {
                         display: true,
                         text: 'Masked PSNR',
-                        font: fontConfig
+                        font: fontConfig,
+                        color: fontConfig.color
                     },
                     ticks: {
-                        font: fontConfig
+                        font: fontConfig,
+                        color: fontConfig.color
                     }
                 },
                 y: {
-                    grid: { display: false },
+                    grid: { 
+                        display: false,
+                        color: document.documentElement.getAttribute('data-theme') === 'dark' ? '#444' : '#ddd'
+                    },
                     ticks: {
                         font: {
                             ...fontConfig,
                             weight: (context) => getFontWeight(methods[context.index])
-                        }
+                        },
+                        color: fontConfig.color
                     }
                 }
             },
@@ -240,14 +312,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         ...fontConfig,
                         size: 16,
                         weight: 'bold'
-                    }
+                    },
+                    color: fontConfig.color
                 }
             }
         }
     });
 
     // LPIPS Chart (lower is better)
-    new Chart(document.getElementById('lpipsChart').getContext('2d'), {
+    const lpipsChart = new Chart(document.getElementById('lpipsChart').getContext('2d'), {
         type: 'bar',
         data: {
             labels: addTrophyToBest(methods, [0.19, 0.32, 0.11, 0.16, 0.24, 0.27, 0.15, 0.08], false),
@@ -267,23 +340,32 @@ document.addEventListener('DOMContentLoaded', function () {
                 x: {
                     beginAtZero: true,
                     max: 0.3,
-                    grid: { display: false },
+                    grid: { 
+                        display: false,
+                        color: document.documentElement.getAttribute('data-theme') === 'dark' ? '#444' : '#ddd'
+                    },
                     title: {
                         display: true,
                         text: 'LPIPS',
-                        font: fontConfig
+                        font: fontConfig,
+                        color: fontConfig.color
                     },
                     ticks: {
-                        font: fontConfig
+                        font: fontConfig,
+                        color: fontConfig.color
                     }
                 },
                 y: {
-                    grid: { display: false },
+                    grid: { 
+                        display: false,
+                        color: document.documentElement.getAttribute('data-theme') === 'dark' ? '#444' : '#ddd'
+                    },
                     ticks: {
                         font: {
                             ...fontConfig,
                             weight: (context) => getFontWeight(methods[context.index])
-                        }
+                        },
+                        color: fontConfig.color
                     }
                 }
             },
@@ -296,19 +378,20 @@ document.addEventListener('DOMContentLoaded', function () {
                         ...fontConfig,
                         size: 16,
                         weight: 'bold'
-                    }
+                    },
+                    color: fontConfig.color
                 }
             }
         }
     });
 
     // Distance Map MAE Chart
-    new Chart(document.getElementById('maeChart').getContext('2d'), {
+    const maeChart = new Chart(document.getElementById('maeChart').getContext('2d'), {
         type: 'bar',
         data: {
             labels: addTrophyToBest(methods, [1.62, 12.55, 0.20, 1.49, 1.02, 0.61, 0.13, 0.07], false),
             datasets: [{
-                label: 'MAE',
+                label: 'DMAE',
                 data: [1.62, 12.55, 0.20, 1.49, 1.02, 0.61, 0.13, 0.07],
                 backgroundColor: colors,
                 borderColor: borderColors,
@@ -323,23 +406,32 @@ document.addEventListener('DOMContentLoaded', function () {
                 x: {
                     beginAtZero: true,
                     max: 5,
-                    grid: { display: false },
+                    grid: { 
+                        display: false,
+                        color: document.documentElement.getAttribute('data-theme') === 'dark' ? '#444' : '#ddd'
+                    },
                     title: {
                         display: true,
-                        text: 'MAE',
-                        font: fontConfig
+                        text: 'DMAE',
+                        font: fontConfig,
+                        color: fontConfig.color
                     },
                     ticks: {
-                        font: fontConfig
+                        font: fontConfig,
+                        color: fontConfig.color
                     }
                 },
                 y: {
-                    grid: { display: false },
+                    grid: { 
+                        display: false,
+                        color: document.documentElement.getAttribute('data-theme') === 'dark' ? '#444' : '#ddd'
+                    },
                     ticks: {
                         font: {
                             ...fontConfig,
                             weight: (context) => getFontWeight(methods[context.index])
-                        }
+                        },
+                        color: fontConfig.color
                     }
                 }
             },
@@ -352,9 +444,18 @@ document.addEventListener('DOMContentLoaded', function () {
                         ...fontConfig,
                         size: 16,
                         weight: 'bold'
-                    }
+                    },
+                    color: fontConfig.color
                 }
             }
         }
+    });
+
+    // Update chart colors when theme changes
+    themeToggleBtn.addEventListener('click', () => {
+        updateChartColors(psnrChart);
+        updateChartColors(maskedPsnrChart);
+        updateChartColors(lpipsChart);
+        updateChartColors(maeChart);
     });
 });
