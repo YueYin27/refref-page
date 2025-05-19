@@ -63,9 +63,6 @@ h1.publication-title.title.is-1 {
   object-fit: fit;
 }
 
-.publication-header .hero-body {
-}
-
 .publication-authors {
     font-family: 'Jost', sans-serif;
 }
@@ -82,13 +79,6 @@ h1.publication-title.title.is-1 {
     font-weight: bolder;
 }
 
-.publication-authors {
-}
-
-.publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
-}
-
 .publication-authors a:hover {
     text-decoration: underline;
 }
@@ -100,13 +90,6 @@ h1.publication-title.title.is-1 {
 .affiliation-logo {
   display: inline-block;
   width: 20%
-}
-
-.publication-banner img {
-}
-
-.publication-authors {
-  /*color: #4286f4;*/
 }
 
 .publication-video {
@@ -125,9 +108,6 @@ h1.publication-title.title.is-1 {
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-.publication-body img {
 }
 
 .results-carousel {
@@ -156,13 +136,6 @@ h1.publication-title.title.is-1 {
 .interpolation-panel .interpolation-image {
   width: 100%;
   border-radius: 5px;
-}
-
-.interpolation-video-column {
-}
-
-.interpolation-panel .slider {
-  margin: 0 !important;
 }
 
 .interpolation-panel .slider {
