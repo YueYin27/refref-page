@@ -95,4 +95,266 @@ document.addEventListener('DOMContentLoaded', function () {
     new BeforeAfter({
         id: '#example9'
     });
+
+    // Common chart configuration
+    const methods = ['NeuS', 'Splatfacto', 'Zip-NeRF', 'TNSR', 'MS-NeRF', 'Ray Deformation', 'R3F (Ours)', 'Oracle (Ours)'];
+    const colors = [
+        'rgba(255, 206, 86, 0.8)',   // NeuS
+        'rgba(54, 162, 235, 0.8)',   // Splatfacto
+        'rgba(255, 99, 132, 0.8)',   // Zip-NeRF
+        'rgba(255, 159, 64, 0.8)',   // TNSR
+        'rgba(75, 192, 192, 0.8)',   // MS-NeRF
+        'rgba(153, 102, 255, 0.8)',  // Ray Deformation
+        'rgba(86, 220, 19, 0.8)',    // R3F (Ours)
+        'rgba(83, 102, 255, 0.8)'    // Oracle (Ours)
+    ];
+
+    const borderColors = colors.map(color => color.replace('0.8', '1'));
+
+    // Common font configuration
+    const fontConfig = {
+        family: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+        size: 14
+    };
+
+    // Add trophy to best method
+    const addTrophyToBest = (labels, data, higherIsBetter = true) => {
+        const bestIndex = higherIsBetter ? 
+            data.indexOf(Math.max(...data)) : 
+            data.indexOf(Math.min(...data));
+        const newLabels = [...labels];
+        newLabels[bestIndex] = '🏆 ' + labels[bestIndex];
+        return newLabels;
+    };
+
+    // Function to get font weight for labels
+    const getFontWeight = (label) => {
+        return label.includes('(Ours)') ? 'bold' : 'normal';
+    };
+
+    // PSNR Chart
+    new Chart(document.getElementById('psnrChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: addTrophyToBest(methods, [19.62, 19.53, 26.11, 18.64, 23.64, 23.13, 24.73, 29.34], true),
+            datasets: [{
+                label: 'PSNR',
+                data: [19.62, 19.53, 26.11, 18.64, 23.64, 23.13, 24.73, 29.34],
+                backgroundColor: colors,
+                borderColor: borderColors,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    beginAtZero: false,
+                    min: 15,
+                    max: 30,
+                    grid: { display: false },
+                    title: {
+                        display: true,
+                        text: 'PSNR',
+                        font: fontConfig
+                    },
+                    ticks: {
+                        font: fontConfig
+                    }
+                },
+                y: {
+                    grid: { display: false },
+                    ticks: {
+                        font: {
+                            ...fontConfig,
+                            weight: (context) => getFontWeight(methods[context.index])
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'PSNR ↑',
+                    font: {
+                        ...fontConfig,
+                        size: 16,
+                        weight: 'bold'
+                    }
+                }
+            }
+        }
+    });
+
+    // Masked PSNR Chart
+    new Chart(document.getElementById('maskedPsnrChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: addTrophyToBest(methods, [14.64, 14.87, 18.41, 11.14, 16.84, 17.38, 17.20, 21.75], true),
+            datasets: [{
+                label: 'Masked PSNR',
+                data: [14.64, 14.87, 18.41, 11.14, 16.84, 17.38, 17.20, 21.75],
+                backgroundColor: colors,
+                borderColor: borderColors,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    beginAtZero: false,
+                    min: 10,
+                    max: 25,
+                    grid: { display: false },
+                    title: {
+                        display: true,
+                        text: 'Masked PSNR',
+                        font: fontConfig
+                    },
+                    ticks: {
+                        font: fontConfig
+                    }
+                },
+                y: {
+                    grid: { display: false },
+                    ticks: {
+                        font: {
+                            ...fontConfig,
+                            weight: (context) => getFontWeight(methods[context.index])
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'Masked PSNR ↑',
+                    font: {
+                        ...fontConfig,
+                        size: 16,
+                        weight: 'bold'
+                    }
+                }
+            }
+        }
+    });
+
+    // LPIPS Chart (lower is better)
+    new Chart(document.getElementById('lpipsChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: addTrophyToBest(methods, [0.19, 0.32, 0.11, 0.16, 0.24, 0.27, 0.15, 0.08], false),
+            datasets: [{
+                label: 'LPIPS',
+                data: [0.19, 0.32, 0.11, 0.16, 0.24, 0.27, 0.15, 0.08],
+                backgroundColor: colors,
+                borderColor: borderColors,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    max: 0.3,
+                    grid: { display: false },
+                    title: {
+                        display: true,
+                        text: 'LPIPS',
+                        font: fontConfig
+                    },
+                    ticks: {
+                        font: fontConfig
+                    }
+                },
+                y: {
+                    grid: { display: false },
+                    ticks: {
+                        font: {
+                            ...fontConfig,
+                            weight: (context) => getFontWeight(methods[context.index])
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'LPIPS ↓',
+                    font: {
+                        ...fontConfig,
+                        size: 16,
+                        weight: 'bold'
+                    }
+                }
+            }
+        }
+    });
+
+    // Distance Map MAE Chart
+    new Chart(document.getElementById('maeChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: addTrophyToBest(methods, [1.62, 12.55, 0.20, 1.49, 1.02, 0.61, 0.13, 0.07], false),
+            datasets: [{
+                label: 'MAE',
+                data: [1.62, 12.55, 0.20, 1.49, 1.02, 0.61, 0.13, 0.07],
+                backgroundColor: colors,
+                borderColor: borderColors,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    max: 5,
+                    grid: { display: false },
+                    title: {
+                        display: true,
+                        text: 'MAE',
+                        font: fontConfig
+                    },
+                    ticks: {
+                        font: fontConfig
+                    }
+                },
+                y: {
+                    grid: { display: false },
+                    ticks: {
+                        font: {
+                            ...fontConfig,
+                            weight: (context) => getFontWeight(methods[context.index])
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'Distance Map MAE ↓',
+                    font: {
+                        ...fontConfig,
+                        size: 16,
+                        weight: 'bold'
+                    }
+                }
+            }
+        }
+    });
 });

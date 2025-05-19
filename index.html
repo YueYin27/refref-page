@@ -24,6 +24,7 @@
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="./static/js/script.js"></script>
 
   <style>
@@ -31,8 +32,9 @@
       margin-right: 0.9em;
     }
     h1.publication-title.title.is-1 {
-      font-size: 2.5rem !important;
+      font-size: 2.8rem !important;
       font-family: 'Castoro', sans-serif !important;
+      font-weight: bold !important;
     }
     /* Adjust dots position */
     .carousel .carousel-indicator {
@@ -65,11 +67,19 @@
       font-size: 0.85em;  /* Slightly larger font */
       padding: 5px 10px;  /* Slightly more padding */
     }
+
+    /* Chart container styles */
+    .chart-container {
+      position: relative;
+      height: 400px;
+      width: 100%;
+      margin: 2rem auto;
+    }
   </style>
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
@@ -86,15 +96,16 @@
       </a>
     </div>
   </div>
-</nav>
+</nav> -->
 
+<br><br>
 
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title"><span style="font-size:2.2rem;vertical-align:middle;margin-right:0.4em;">🐕</span>RefRef: A Synthetic Dataset and Benchmark for Reconstructing Refractive and Reflective Objects</h1>
+          <h1 class="title is-1 publication-title"><span style="font-size:2.2rem;vertical-align:middle;margin-right:0.4em;">🐕</span>RefRef: A Synthetic Dataset and Benchmark for<br>Reconstructing Refractive and Reflective Objects</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block"><a href="https://github.com/YueYin27" target="_blank">Yue Yin</a></span>
             <span class="author-block"><a href="https://enze-tao.github.io/" target="_blank">Enze Tao</a></span>
@@ -152,7 +163,7 @@
 
 <section class="hero is-light is-small">
   <div class="hero-body" style="padding: 1rem 0;">
-    <div class="container" style="max-width: 900px; position: relative;">
+    <div class="container" style="max-width: 1000px; position: relative;">
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-ball">
           <video poster="" id="ball" autoplay controls muted loop playsinline height="100%">
@@ -190,7 +201,7 @@
 </section>
 
 <section class="section">
-  <div class="container" style="max-width: 900px;">
+  <div class="container" style="max-width: 1000px;">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column">
@@ -218,7 +229,7 @@
 </section>
 
 <section class="section">
-  <div class="container" style="max-width: 900px;">
+  <div class="container" style="max-width: 1000px;">
     <h2 class="title is-3">Visual Comparisons</h2>
     <div class="content has-text-justified">
       <p>
@@ -235,7 +246,7 @@
             </div>
           </div>
           <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 200px;">
+            <div class="bal-before-inset" style="width: 250px;">
               <img src="static/images/dog_tnsr.png">
               <div class="bal-beforePosition beforeLabel">
                 TNSR
@@ -258,7 +269,7 @@
             </div>
           </div>
           <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 200px;">
+            <div class="bal-before-inset" style="width: 250px;">
               <img src="static/images/ball_ms.png">
               <div class="bal-beforePosition beforeLabel">
                 MS-NeRF
@@ -281,7 +292,7 @@
             </div>
           </div>
           <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 200px;">
+            <div class="bal-before-inset" style="width: 250px;">
               <img src="static/images/ampoule_zip.png">
               <div class="bal-beforePosition beforeLabel">
                 Zip-NeRF
@@ -304,7 +315,7 @@
             </div>
           </div>
           <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 200px;">
+            <div class="bal-before-inset" style="width: 250px;">
               <img src="static/images/beaker_ray.png">
               <div class="bal-beforePosition beforeLabel">
                 Ray Deformation
@@ -330,7 +341,7 @@
             </div>
           </div>
           <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 200px;">
+            <div class="bal-before-inset" style="width: 250px;">
               <img src="static/images/cube_tnsr.png">
               <div class="bal-beforePosition beforeLabel">
                 TNSR
@@ -353,7 +364,7 @@
             </div>
           </div>
           <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 200px;">
+            <div class="bal-before-inset" style="width: 250px;">
               <img src="static/images/ball_hdr_ms.png">
               <div class="bal-beforePosition beforeLabel">
                 MS-NeRF
@@ -376,7 +387,7 @@
             </div>
           </div>
           <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 200px;">
+            <div class="bal-before-inset" style="width: 250px;">
               <img src="static/images/cylinder_zip.png">
               <div class="bal-beforePosition beforeLabel">
                 Zip-NeRF
@@ -399,7 +410,7 @@
             </div>
           </div>
           <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 200px;">
+            <div class="bal-before-inset" style="width: 250px;">
               <img src="static/images/torus_ray.png">
               <div class="bal-beforePosition beforeLabel">
                 Ray Deformation
@@ -416,9 +427,36 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container" style="max-width: 1000px;">
+    <h2 class="title is-3">Quantitative Results</h2>
+    <div class="columns is-multiline">
+      <div class="column is-6">
+        <div class="chart-container" style="height: 400px;">
+          <canvas id="psnrChart"></canvas>
+        </div>
+      </div>
+      <div class="column is-6">
+        <div class="chart-container" style="height: 400px;">
+          <canvas id="maskedPsnrChart"></canvas>
+        </div>
+      </div>
+      <div class="column is-6">
+        <div class="chart-container" style="height: 400px;">
+          <canvas id="lpipsChart"></canvas>
+        </div>
+      </div>
+      <div class="column is-6">
+        <div class="chart-container" style="height: 400px;">
+          <canvas id="maeChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
-  <div class="container" style="max-width: 900px;">
+  <div class="container" style="max-width: 1000px;">
     <h2 class="title">BibTeX</h2>
     <pre><code>@misc{yin2025refrefsyntheticdatasetbenchmark,
       title={RefRef: A Synthetic Dataset and Benchmark for Reconstructing Refractive and Reflective Objects}, 
