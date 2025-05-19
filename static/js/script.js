@@ -82,4 +82,17 @@ document.addEventListener('DOMContentLoaded', function () {
     new BeforeAfter({
         id: '#example5'
     });
+    // Initialize new examples
+    new BeforeAfter({
+        id: '#example6'
+    });
+    new BeforeAfter({
+        id: '#example7'
+    });
+    new BeforeAfter({
+        id: '#example8'
+    });
+    new BeforeAfter({
+        id: '#example9'
+    });
 });
