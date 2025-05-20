@@ -42,13 +42,21 @@ $(document).ready(function() {
 // View counter functionality
 async function updateViewCount() {
   try {
-    const response = await fetch('https://api.countapi.xyz/hit/refref-page/views');
+    // Use a more reliable endpoint and add a timestamp to prevent caching
+    const response = await fetch(`https://api.countapi.xyz/hit/refref-page/views?t=${Date.now()}`);
     const data = await response.json();
-    document.getElementById('viewCount').textContent = data.value.toLocaleString();
+    if (data && data.value !== undefined) {
+      document.getElementById('viewCount').textContent = data.value.toLocaleString();
+    }
   } catch (error) {
     console.error('Error updating view count:', error);
   }
 }
 
-// Update view count when page loads
+// Update view count when page loads and when it becomes visible
 document.addEventListener('DOMContentLoaded', updateViewCount);
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') {
+    updateViewCount();
+  }
+});
