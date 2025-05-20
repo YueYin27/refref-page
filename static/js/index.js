@@ -38,3 +38,17 @@ $(document).ready(function() {
     	});
     }
 })
+
+// View counter functionality
+async function updateViewCount() {
+  try {
+    const response = await fetch('https://api.countapi.xyz/hit/refref-page/views');
+    const data = await response.json();
+    document.getElementById('viewCount').textContent = data.value.toLocaleString();
+  } catch (error) {
+    console.error('Error updating view count:', error);
+  }
+}
+
+// Update view count when page loads
+document.addEventListener('DOMContentLoaded', updateViewCount);
