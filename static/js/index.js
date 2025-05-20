@@ -40,23 +40,17 @@ $(document).ready(function() {
 })
 
 // View counter functionality
-async function updateViewCount() {
-  try {
-    // Use a more reliable endpoint and add a timestamp to prevent caching
-    const response = await fetch(`https://api.countapi.xyz/hit/refref-page/views?t=${Date.now()}`);
-    const data = await response.json();
-    if (data && data.value !== undefined) {
-      document.getElementById('viewCount').textContent = data.value.toLocaleString();
-    }
-  } catch (error) {
-    console.error('Error updating view count:', error);
+function updateViewCount() {
+  // Google Analytics will automatically track page views
+  // You can view the statistics in your Google Analytics dashboard
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'page_view', {
+      'page_title': document.title,
+      'page_location': window.location.href,
+      'page_path': window.location.pathname
+    });
   }
 }
 
-// Update view count when page loads and when it becomes visible
+// Update view count when page loads
 document.addEventListener('DOMContentLoaded', updateViewCount);
-document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'visible') {
-    updateViewCount();
-  }
-});
