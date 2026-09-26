@@ -1,32 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="RefRef: A Synthetic Dataset and Benchmark for Reconstructing Refractive and Reflective Objects">
-  <meta name="keywords" content="RefRef, R3F, NeRF, RefRef dataset, Transparent object reconstruction, Refractive and reflective objects, 3D reconstruction, Neural rendering, Computer vision, Machine learning">
+        content="RefRef: a dataset and benchmark of 150 synthetic and 60 real scenes for reconstructing refractive and reflective objects, with an oracle method and the R3F baseline.">
+  <meta name="keywords" content="RefRef, R3F, NeRF, RefRef dataset, Transparent object reconstruction, Refractive and reflective objects, Real-world captures, 3D reconstruction, Novel view synthesis, Neural rendering, Computer vision">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Yue Yin, Enze Tao, Weijian Deng, Dylan Campbell">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://yinyue27.github.io/refref-page/">
-  <title>RefRef: A Synthetic Dataset and Benchmark for Reconstructing Refractive and Reflective Objects</title>
+  <title>RefRef: A Dataset and Benchmark for Reconstructing Refractive and Reflective Objects</title>
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://yinyue27.github.io/refref-page/">
-  <meta property="og:title" content="RefRef: A Synthetic Dataset and Benchmark for Reconstructing Refractive and Reflective Objects">
-  <meta property="og:description" content="Modern 3D reconstruction and novel view synthesis approaches have demonstrated strong performance on scenes with opaque non-refractive objects. However, most assume straight light paths and therefore cannot properly handle refractive and reflective materials.">
-  <meta property="og:image" content="https://yinyue27.github.io/refref-page/static/images/method_light.svg">
+  <meta property="og:title" content="RefRef: A Dataset and Benchmark for Reconstructing Refractive and Reflective Objects">
+  <meta property="og:description" content="150 synthetic and 60 real scenes with strongly refractive and reflective objects. Our benchmark shows that the task is far from solved.">
+  <meta property="og:image" content="https://yinyue27.github.io/refref-page/static/images/wacv/teaser/dog_ref.png">
   <meta property="og:site_name" content="RefRef Dataset">
   <meta property="article:author" content="Yue Yin, Enze Tao, Weijian Deng, Dylan Campbell">
   <meta property="article:published_time" content="2025-01-27T00:00:00Z">
+  <meta property="article:modified_time" content="2026-09-26T00:00:00Z">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://yinyue27.github.io/refref-page/">
-  <meta property="twitter:title" content="RefRef: A Synthetic Dataset and Benchmark for Reconstructing Refractive and Reflective Objects">
-  <meta property="twitter:description" content="Modern 3D reconstruction and novel view synthesis approaches have demonstrated strong performance on scenes with opaque non-refractive objects. However, most assume straight light paths and therefore cannot properly handle refractive and reflective materials.">
-  <meta property="twitter:image" content="https://yinyue27.github.io/refref-page/static/images/method_light.svg">
+  <meta property="twitter:title" content="RefRef: A Dataset and Benchmark for Reconstructing Refractive and Reflective Objects">
+  <meta property="twitter:description" content="150 synthetic and 60 real scenes with strongly refractive and reflective objects. Our benchmark shows that the task is far from solved.">
+  <meta property="twitter:image" content="https://yinyue27.github.io/refref-page/static/images/wacv/teaser/dog_ref.png">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4C5GWTVYWT"></script>
@@ -43,22 +44,22 @@
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "RefRef: A Synthetic Dataset and Benchmark for Reconstructing Refractive and Reflective Objects",
-    "description": "Modern 3D reconstruction and novel view synthesis approaches have demonstrated strong performance on scenes with opaque non-refractive objects. However, most assume straight light paths and therefore cannot properly handle refractive and reflective materials.",
+    "headline": "RefRef: A Dataset and Benchmark for Reconstructing Refractive and Reflective Objects",
+    "description": "RefRef is a dataset and benchmark of 150 synthetic and 60 real scenes for reconstructing refractive and reflective objects from posed images, with an oracle method and a simple two-stage baseline (R3F).",
     "author": [
       {
         "@type": "Person",
         "name": "Yue Yin",
-        "url": "https://yinyue27.github.io/"
+        "url": "https://yueyin27.github.io/"
       },
       {
-        "@type": "Person", 
+        "@type": "Person",
         "name": "Enze Tao",
         "url": "https://enze-tao.github.io/"
       },
       {
         "@type": "Person",
-        "name": "Weijian Deng", 
+        "name": "Weijian Deng",
         "url": "https://weijiandeng.xyz"
       },
       {
@@ -73,27 +74,18 @@
       "url": "https://www.anu.edu.au/"
     },
     "datePublished": "2025-01-27",
-    "dateModified": "2025-01-27",
+    "dateModified": "2026-09-26",
     "url": "https://yinyue27.github.io/refref-page/",
     "sameAs": [
       "https://arxiv.org/abs/2505.05848",
       "https://github.com/YueYin27/refref",
       "https://huggingface.co/datasets/yinyue27/RefRef"
     ],
-    "keywords": "RefRef, R3F, NeRF, 3D reconstruction, Neural rendering, Computer vision, Machine learning, Refractive objects, Reflective objects",
+    "keywords": "RefRef, R3F, NeRF, 3D reconstruction, Novel view synthesis, Neural rendering, Refractive objects, Reflective objects, Real-world captures",
     "about": [
-      {
-        "@type": "Thing",
-        "name": "3D Reconstruction"
-      },
-      {
-        "@type": "Thing", 
-        "name": "Neural Rendering"
-      },
-      {
-        "@type": "Thing",
-        "name": "Computer Vision"
-      }
+      { "@type": "Thing", "name": "3D Reconstruction" },
+      { "@type": "Thing", "name": "Neural Rendering" },
+      { "@type": "Thing", "name": "Computer Vision" }
     ]
   }
   </script>
@@ -102,94 +94,22 @@
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/index.css?v=20260926k">
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f436.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="./static/js/script.js"></script>
-
-  <style>
-    .author-block {
-      margin-right: 0.9em;
-    }
-    h1.publication-title.title.is-1 {
-      font-size: 2.8rem !important;
-      font-family: 'Castoro', sans-serif !important;
-      font-weight: bold !important;
-    }
-    /* Adjust dots position */
-    .carousel .carousel-indicator {
-      margin-top: 0.5em !important;
-    }
-    .carousel .carousel-indicator .indicator-item {
-      padding: 4px !important;
-    }
-    /* Image comparison container styles */
-    .bal-container-small {
-      position: relative;
-      width: 100%;
-      max-width: 250px;  /* Increased from 200px */
-      margin: 0 auto;
-      cursor: col-resize;
-    }
-
-    .bal-after img,
-    .bal-before img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-width: 250px;  /* Increased from 200px */
-      object-fit: cover;
-    }
-
-    /* Adjust label positions for containers */
-    .bal-afterPosition,
-    .bal-beforePosition {
-      font-size: 0.85em;  /* Slightly larger font */
-      padding: 5px 10px;  /* Slightly more padding */
-    }
-
-    /* Chart container styles */
-    .chart-container {
-      position: relative;
-      height: 400px;
-      width: 100%;
-      margin: 2rem auto;
-    }
-  </style>
+  <script src="./static/js/script.js?v=20260926f"></script>
 </head>
 <body>
 
-<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://github.com/YueYin27">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-    </div>
-  </div>
-</nav> -->
-
 <div class="theme-toggle">
-  <button id="theme-toggle-btn" class="theme-toggle-btn">
+  <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle dark mode">
     <i class="fas fa-moon"></i>
   </button>
 </div>
@@ -201,7 +121,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title"><span style="font-size:2.2rem;vertical-align:middle;margin-right:0.4em;">🐕</span>RefRef: A Synthetic Dataset and Benchmark for<br>Reconstructing Refractive and Reflective Objects</h1>
+          <h1 class="title is-1 publication-title"><span class="title-emoji">🐕</span>RefRef: A Dataset and Benchmark for <br>Reconstructing Refractive and Reflective Objects</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block"><a href="https://yueyin27.github.io/" target="_blank">Yue Yin</a></span>
             <span class="author-block"><a href="https://enze-tao.github.io/" target="_blank">Enze Tao</a></span>
@@ -210,33 +130,26 @@
           </div>
           <div class="is-size-5 has-text-centered" style="margin-top: 1.5em;">
             <a href="https://www.anu.edu.au/" target="_blank">
-              <img src="./static/images/ANU_light.png" alt="ANU Logo" style="height:4em;vertical-align:middle;margin-right:0.5em;">
+              <img src="./static/images/ANU_light.png" alt="ANU Logo" style="height:4em;vertical-align:middle;">
             </a>
-           <div class="is-size-5 has-text-centered" style="margin-top: 1.5em;">
           </div>
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
                 <a href="https://arxiv.org/pdf/2505.05848" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper</span>
                 </a>
               </span>
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2505.05848" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
                   <span>arXiv</span>
                 </a>
               </span>
               <span class="link-block">
                 <a href="https://github.com/YueYin27/refref" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
+                  <span class="icon"><i class="fab fa-github"></i></span>
                   <span>Code</span>
                 </a>
               </span>
@@ -256,321 +169,216 @@
   </div>
 </section>
 
-
-<section class="hero is-light is-small">
-  <div class="hero-body" style="padding: 1rem 0;">
-    <div class="container" style="max-width: 1000px; position: relative;">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-oracle">
-          <video poster="" id="oracle" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/oracle.mp4" type="video/mp4">
-          </video>
+<!-- Teaser -->
+<section class="section teaser-section">
+  <div class="container" style="max-width: 1000px;">
+    <div class="stage" id="stage" role="region" aria-roledescription="carousel" aria-label="Dataset preview and results">
+      <div class="stage-slides">
+        <div class="stage-slide is-active" aria-label="Dataset preview">
+          <div class="preview">
+          <div class="preview-rail" aria-hidden="true">
+            <div class="preview-group" style="top: 0; height: 59.327%;"><span>Synthetic</span></div>
+            <div class="preview-group" style="top: 60.550%; height: 39.450%;"><span>Real</span></div>
+            <div class="preview-row" style="top: 0.000%; height: 19.572%;"><span>Env. map</span></div>
+            <div class="preview-row" style="top: 19.878%; height: 19.572%;"><span>Cube</span></div>
+            <div class="preview-row" style="top: 39.755%; height: 19.572%;"><span>Sphere</span></div>
+            <div class="preview-row" style="top: 60.550%; height: 19.572%;"><span>Indoor</span></div>
+            <div class="preview-row" style="top: 80.428%; height: 19.572%;"><span>Outdoor</span></div>
+          </div>
+            <div class="preview-media">
+              <video id="preview-video" poster="./static/images/wacv/preview_poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Preview of RefRef scenes: synthetic scenes with environment map, textured cube and textured sphere backgrounds, and real indoor and outdoor scenes">
+                <source src="./static/videos/refref_preview_web.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
         </div>
-        <div class="item item-ball">
-          <video poster="" id="ball" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/ball.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-cube">
-          <video poster="" id="cube" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/cube.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-cylinder">
-          <video poster="" id="cylinder" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/cylinder.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-torus">
-          <video poster="" id="torus" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/torus.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-ampoule">
-          <video poster="" id="ampoule" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/ampoule.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-beaker">
-          <video poster="" id="beaker" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/beaker.mp4" type="video/mp4">
+        <div class="stage-slide stage-slide-video" aria-label="NVS Results" aria-hidden="true">
+          <video id="refref-video" poster="./static/images/wacv/video_poster.jpg" controls muted loop playsinline preload="metadata" aria-label="R3F results compared with ground truth and other methods">
+            <source src="./static/videos/RefRef_web.mp4" type="video/mp4">
           </video>
         </div>
       </div>
+      <button class="stage-arrow prev" type="button" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+      <button class="stage-arrow next" type="button" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <div class="stage-tabs" role="tablist" aria-label="Choose slide">
+      <button class="chip is-active" type="button" data-slide="0" role="tab" aria-selected="true">Dataset preview</button>
+      <button class="chip" type="button" data-slide="1" role="tab" aria-selected="false">NVS results</button>
     </div>
   </div>
 </section>
 
+<!-- Abstract -->
 <section class="section">
   <div class="container" style="max-width: 1000px;">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Modern 3D reconstruction and novel view synthesis approaches have demonstrated strong performance on scenes with opaque non-refractive objects. 
-            However, most assume straight light paths and therefore cannot properly handle refractive and reflective materials. 
-            Moreover, datasets specialized for these effects are limited, stymieing efforts to evaluate performance and develop suitable techniques.
-          </p>
-          <p>
-            In this work, we introduce a synthetic RefRef dataset and benchmark for reconstructing scenes with refractive and reflective objects from posed images. 
-            Our dataset has 50 such objects of varying complexity, from single-material convex shapes to multi-material non-convex shapes, each placed in three different background types, resulting in 150 scenes. 
-            We also propose an oracle method that, given the object geometry and refractive indices, calculates accurate light paths for neural rendering, and an approach based on this that avoids these assumptions. 
-            We benchmark these against several state-of-the-art methods and show that all methods lag significantly behind the oracle, highlighting the challenges of the task and dataset.
+            Modern 3D reconstruction and novel view synthesis approaches have demonstrated strong performance on scenes with opaque, non-refractive objects. However, most assume straight light paths and therefore cannot properly handle refractive and reflective materials. The lack of datasets specialized for these effects has impeded efforts to fairly and thoroughly evaluate performance and thereby make progress in this domain. Most existing datasets focus on opaque scenes, while those targeting refractive objects are often limited to thin glass with negligible ray bending, untinted single-material objects, or backgrounds treated as infinitely distant, leaving key failure modes under strong refraction untested. To address this gap, we introduce the RefRef dataset. It contains 150 synthetic and 60 real scenes spanning varying levels of geometric complexity and diverse background types that expose the limitations of existing methods. For the purpose of benchmarking, we also provide an oracle method that, given the object geometry and refractive indices, calculates accurate light paths for neural rendering, and a simple two-stage baseline that relaxes these assumptions. We evaluate these against state-of-the-art methods and show that the task is far from solved.
           </p>
         </div>
       </div>
     </div>
-    <div class="has-text-centered" style="margin-top:2em;">
-      <img src="./static/images/method_light.svg" alt="Method Teaser" style="max-width:100%;">
-    </div>
-    <!--/ Abstract. -->
   </div>
 </section>
 
+<!-- Dataset -->
 <section class="section">
   <div class="container" style="max-width: 1000px;">
-    <h2 class="title is-3">Visual Comparisons</h2>
-    <p class="subtitle is-5">Compare our RefRef dataset results with state-of-the-art methods including TNSR, MS-NeRF, Zip-NeRF, and Ray Deformation approaches</p>
+    <h2 class="title is-3">The RefRef Dataset</h2>
+    <div class="stat-row">
+      <div class="stat-tile"><div class="stat-value">150</div><div class="stat-label">synthetic scenes<br>(50 objects × 3 types of backgrounds)</div></div>
+      <div class="stat-tile"><div class="stat-value">60</div><div class="stat-label">real scenes<br>(15 configurations × 4 environments)</div></div>
+      <div class="stat-tile"><div class="stat-value">45,000</div><div class="stat-label">rendered images<br>at 800 × 800</div></div>
+      <div class="stat-tile"><div class="stat-value">40%</div><div class="stat-label">of scenes contain<br>tinted materials</div></div>
+    </div>
+
     <div class="content has-text-justified">
       <p>
+        Unlike existing datasets, RefRef contains objects with large refractive volumes, both clear and tinted materials,
+        single and multi-material objects, and backgrounds from nearby geometry to distant environments.
+        Across the scenes these appear in different combinations, producing strong light bending, multiple refractions,
+        total internal reflection and light absorption.
       </p>
     </div>
-    <!-- Visual Effects. -->
-    <div class="columns is-centered">
-      <div class="column is-3">
-        <div id="example1" class="bal-container-small">
-          <div class="bal-after">
-            <img src="static/images/dog_oracle.png">
-            <div class="bal-afterPosition afterLabel" style="z-index:1;">
-              Oracle (Ours)
-            </div>
-          </div>
-          <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 250px;">
-              <img src="static/images/dog_tnsr.png">
-              <div class="bal-beforePosition beforeLabel">
-                TNSR
-              </div>
-            </div>
-          </div>
-          <div class="bal-handle" style="left:50%;">
-            <span class="handle-left-arrow"></span>
-            <span class="handle-right-arrow"></span>
-          </div>
+
+    <div class="columns">
+      <div class="column is-6">
+        <h3 class="title is-5">Geometry and material complexity</h3>
+        <div class="table-scroll">
+          <table class="table is-fullwidth category-table">
+            <thead>
+              <tr><th>Category</th><th class="num">Synthetic</th><th class="num">Real</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Convex single-material</strong><br><span class="muted">e.g., glass sphere, glass pyramid</span></td><td class="num">27</td><td class="num">8</td></tr>
+              <tr><td><strong>Nonconvex single-material</strong><br><span class="muted">e.g., glass sculptures, jars, magnifiers</span></td><td class="num">60</td><td class="num">4</td></tr>
+              <tr><td><strong>Nonconvex multi-material</strong><br><span class="muted">e.g., reed diffusers, wine bottles, snow globes</span></td><td class="num">63</td><td class="num">48</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
-
-      <div class="column is-3">
-        <div id="example2" class="bal-container-small">
-          <div class="bal-after">
-            <img src="static/images/ball_oracle.png">
-            <div class="bal-afterPosition afterLabel">
-              Oracle (Ours)
-            </div>
-          </div>
-          <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 250px;">
-              <img src="static/images/ball_ms.png">
-              <div class="bal-beforePosition beforeLabel">
-                MS-NeRF
-              </div>
-            </div>
-          </div>
-          <div class="bal-handle" style="left:50%;">
-            <span class="handle-left-arrow"></span>
-            <span class="handle-right-arrow"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="column is-3">
-        <div id="example4" class="bal-container-small">
-          <div class="bal-after">
-            <img src="static/images/ampoule_oracle.png">
-            <div class="bal-afterPosition afterLabel">
-              Oracle (Ours)
-            </div>
-          </div>
-          <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 250px;">
-              <img src="static/images/ampoule_zip.png">
-              <div class="bal-beforePosition beforeLabel">
-                Zip-NeRF
-              </div>
-            </div>
-          </div>
-          <div class="bal-handle" style="left:50%;">
-            <span class="handle-left-arrow"></span>
-            <span class="handle-right-arrow"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="column is-3">
-        <div id="example5" class="bal-container-small">
-          <div class="bal-after">
-            <img src="static/images/beaker_oracle.png">
-            <div class="bal-afterPosition afterLabel">
-              Oracle (Ours)
-            </div>
-          </div>
-          <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 250px;">
-              <img src="static/images/beaker_ray.png">
-              <div class="bal-beforePosition beforeLabel">
-                Ray Deformation
-              </div>
-            </div>
-          </div>
-          <div class="bal-handle" style="left:50%;">
-            <span class="handle-left-arrow"></span>
-            <span class="handle-right-arrow"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Visual Effects - Row 2 -->
-    <div class="columns is-centered" style="margin-top: 2rem;">
-      <div class="column is-3">
-        <div id="example6" class="bal-container-small">
-          <div class="bal-after">
-            <img src="static/images/cube_r3f.png">
-            <div class="bal-afterPosition afterLabel" style="z-index:1;">
-              R3F (Ours)
-            </div>
-          </div>
-          <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 250px;">
-              <img src="static/images/cube_tnsr.png">
-              <div class="bal-beforePosition beforeLabel">
-                TNSR
-              </div>
-            </div>
-          </div>
-          <div class="bal-handle" style="left:50%;">
-            <span class="handle-left-arrow"></span>
-            <span class="handle-right-arrow"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="column is-3">
-        <div id="example7" class="bal-container-small">
-          <div class="bal-after">
-            <img src="static/images/ball_hdr_r3f.png">
-            <div class="bal-afterPosition afterLabel">
-              R3F (Ours)
-            </div>
-          </div>
-          <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 250px;">
-              <img src="static/images/ball_hdr_ms.png">
-              <div class="bal-beforePosition beforeLabel">
-                MS-NeRF
-              </div>
-            </div>
-          </div>
-          <div class="bal-handle" style="left:50%;">
-            <span class="handle-left-arrow"></span>
-            <span class="handle-right-arrow"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="column is-3">
-        <div id="example8" class="bal-container-small">
-          <div class="bal-after">
-            <img src="static/images/cylinder_r3f.png">
-            <div class="bal-afterPosition afterLabel">
-              R3F (Ours)
-            </div>
-          </div>
-          <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 250px;">
-              <img src="static/images/cylinder_zip.png">
-              <div class="bal-beforePosition beforeLabel">
-                Zip-NeRF
-              </div>
-            </div>
-          </div>
-          <div class="bal-handle" style="left:50%;">
-            <span class="handle-left-arrow"></span>
-            <span class="handle-right-arrow"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="column is-3">
-        <div id="example9" class="bal-container-small">
-          <div class="bal-after">
-            <img src="static/images/torus_r3f.png">
-            <div class="bal-afterPosition afterLabel">
-              R3F (Ours)
-            </div>
-          </div>
-          <div class="bal-before" style="width:50%;">
-            <div class="bal-before-inset" style="width: 250px;">
-              <img src="static/images/torus_ray.png">
-              <div class="bal-beforePosition beforeLabel">
-                Ray Deformation
-              </div>
-            </div>
-          </div>
-          <div class="bal-handle" style="left:50%;">
-            <span class="handle-left-arrow"></span>
-            <span class="handle-right-arrow"></span>
-          </div>
+      <div class="column is-6">
+        <h3 class="title is-5">Backgrounds and environments</h3>
+        <div class="content">
+          <ul>
+            <li><strong>Bounded (100 synthetic):</strong> a cube or sphere with high-frequency textures at a finite distance, so the observed color depends on both the origin and direction of the refracted ray.</li>
+            <li><strong>Unbounded (50 synthetic):</strong> HDR environment maps treated as infinitely far away.</li>
+            <li><strong>Indoor (30 real):</strong> a living room lit by ceiling lights and a darker puzzle table lit by a lamp.</li>
+            <li><strong>Outdoor (30 real):</strong> direct sunlight with static shadows in a courtyard, and after sunset on a lookout deck.</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Method -->
+<section class="section">
+  <div class="container" style="max-width: 1000px;">
+    <h2 class="title is-3">Benchmark Reference Methods</h2>
+    <div class="method-figure">
+      <img src="./static/images/wacv/method.svg" alt="Overview of the oracle method" loading="lazy">
+    </div>
+    <div class="columns" style="margin-top: 1.5rem;">
+      <div class="column is-6">
+        <h3 class="title is-5">Oracle</h3>
+        <div class="content has-text-justified">
+          <p>
+            Given the ground-truth object geometry and refractive indices, the oracle traces physically accurate light paths.
+            Samples along each camera ray are updated at every surface intersection, and refracted and reflected rays are handled separately.
+            A Zip-NeRF field predicts color and density for each sample, and the rendered colors are combined with the Fresnel equations.
+            The oracle models refraction, reflection, total internal reflection and absorption.
+          </p>
+        </div>
+      </div>
+      <div class="column is-6">
+        <h3 class="title is-5">R3F: a simple two-stage baseline</h3>
+        <div class="content has-text-justified">
+          <p>
+            R3F (Refractive–Reflective Radiance Field) removes the need for ground-truth geometry and refractive indices.
+            It first estimates the object's geometry and refractive index with NU-NeRF,
+            then fits a Zip-NeRF background field with the object masked out (masks predicted by SAM&nbsp;3).
+            Finally, it fits a separate in-object field using the oracle's ray tracing while the background field stays frozen, which prevents floaters outside the object.
+            Its performance depends entirely on the quality of the estimated geometry.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Qualitative -->
+<section class="section">
+  <div class="container" style="max-width: 1000px;">
+    <h2 class="title is-3">Qualitative Results</h2>
+
+    <div class="qual-group" id="qual-synthetic"></div>
+    <div class="qual-group" id="qual-real"></div>
+
+    <h3 class="title is-5 open-problem-title">An unsolved open problem</h3>
+    <p class="subtitle is-6 section-sub">
+      On this real scene with several objects, every method fails, including R3F.
+    </p>
+    <div class="fail-strip" id="fail-strip"></div>
+  </div>
+</section>
+
+<!-- Quantitative -->
 <section class="section">
   <div class="container" style="max-width: 1000px;">
     <h2 class="title is-3">Quantitative Results</h2>
-    <p class="subtitle is-5">Performance metrics including PSNR, LPIPS, and MAE across different methods on the RefRef dataset</p>
-    <div class="columns is-multiline">
-      <div class="column is-6">
-        <div class="chart-container" style="height: 400px;">
-          <canvas id="psnrChart"></canvas>
+    <p class="subtitle is-6 section-sub">
+      Novel view synthesis (PSNR, masked PSNR, SSIM, LPIPS) and geometry (distance-map MAE) on the RefRef test sets.
+      On synthetic scenes, the oracle is far ahead of every other method, including R3F.
+      On real scenes, every method does poorly, and even the top scorer (Zip-NeRF) produces very blurry renderings.
+    </p>
+
+    <div class="quant-controls">
+      <div class="chip-row" id="category-picker" role="tablist" aria-label="Category"></div>
+    </div>
+
+    <div class="quant-tables">
+      <div>
+        <h3 class="title is-6 quant-title">Synthetic scenes</h3>
+        <div class="table-scroll">
+          <table class="table results-table" id="results-synthetic"></table>
         </div>
       </div>
-      <div class="column is-6">
-        <div class="chart-container" style="height: 400px;">
-          <canvas id="maskedPsnrChart"></canvas>
+      <div>
+        <h3 class="title is-6 quant-title">Real scenes</h3>
+        <div class="table-scroll">
+          <table class="table results-table" id="results-real"></table>
         </div>
-      </div>
-      <div class="column is-6">
-        <div class="chart-container" style="height: 400px;">
-          <canvas id="lpipsChart"></canvas>
-        </div>
-      </div>
-      <div class="column is-6">
-        <div class="chart-container" style="height: 400px;">
-          <canvas id="maeChart"></canvas>
-        </div>
+        <p class="table-note">
+          <strong>Bold</strong>: best. <u>Underline</u>: second best.
+          † The oracle has access to the ground-truth object geometry and material properties.
+          A dash means the method could not produce that result. DMAE is not reported for real scenes, which have no ground-truth geometry.
+        </p>
       </div>
     </div>
+
   </div>
 </section>
 
 <section class="section" id="BibTeX">
   <div class="container" style="max-width: 1000px;">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{yin2025refrefsyntheticdatasetbenchmark,
-      title={RefRef: A Synthetic Dataset and Benchmark for Reconstructing Refractive and Reflective Objects}, 
-      author={Yue Yin and Enze Tao and Weijian Deng and Dylan Campbell},
-      year={2025},
-      eprint={2505.05848},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2505.05848}, 
-}
-</code></pre>
+    <div class="bibtex-head">
+      <h2 class="title">BibTeX</h2>
+      <button class="button is-small is-rounded copy-btn" id="copy-bibtex"><span class="icon"><i class="far fa-copy"></i></span><span>Copy</span></button>
+    </div>
+    <pre><code id="bibtex">@misc{yin2025refref,
+  title         = {RefRef: A Dataset and Benchmark for Reconstructing Refractive and Reflective Objects},
+  author        = {Yin, Yue and Tao, Enze and Deng, Weijian and Campbell, Dylan},
+  year          = {2025},
+  eprint        = {2505.05848},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2505.05848}
+}</code></pre>
   </div>
 </section>
 
@@ -578,11 +386,10 @@
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-      <a class="icon-link"
-         href="https://arxiv.org/pdf/2505.05848">
+      <a class="icon-link" href="https://arxiv.org/pdf/2505.05848" aria-label="Paper PDF">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/YueYin27/refref" class="external-link" disabled>
+      <a class="icon-link" href="https://github.com/YueYin27/refref" aria-label="GitHub">
         <i class="fab fa-github"></i>
       </a>
       <p>

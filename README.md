@@ -7,7 +7,7 @@ This repository contains the website for the RefRef project.
 **Project Website:** [https://github.com/YueYin27/refref](https://github.com/YueYin27/refref)
 
 ## Introduction
-RefRef is a synthetic dataset and benchmark for reconstructing scenes with refractive and reflective objects from posed images. The dataset contains 50 objects of varying complexity, each placed in three different background types, resulting in 150 scenes. We propose an oracle method for accurate light path calculation and benchmark it against state-of-the-art methods, highlighting the challenges of reconstructing such objects.
+RefRef is a dataset and benchmark for reconstructing scenes with refractive and reflective objects from posed images. It contains 150 synthetic scenes (50 objects, each rendered against three background types) and 60 real scenes (15 object configurations captured in two indoor and two outdoor environments). For benchmarking, we provide an oracle method that traces accurate light paths given the object geometry and refractive indices, and R3F, a simple two-stage baseline that relaxes these requirements. Our evaluation of state-of-the-art methods shows that the task is far from solved.
 
 ## Dataset
 The dataset is available on Hugging Face:
@@ -17,14 +17,14 @@ The dataset is available on Hugging Face:
 If you find RefRef useful for your work, please cite:
 
 ```bibtex
-@misc{yin2025refrefsyntheticdatasetbenchmark,
-  title={RefRef: A Synthetic Dataset and Benchmark for Reconstructing Refractive and Reflective Objects}, 
-  author={Yue Yin and Enze Tao and Weijian Deng and Dylan Campbell},
-  year={2025},
-  eprint={2505.05848},
-  archivePrefix={arXiv},
-  primaryClass={cs.CV},
-  url={https://arxiv.org/abs/2505.05848}, 
+@misc{yin2025refref,
+  title         = {RefRef: A Dataset and Benchmark for Reconstructing Refractive and Reflective Objects},
+  author        = {Yin, Yue and Tao, Enze and Deng, Weijian and Campbell, Dylan},
+  year          = {2025},
+  eprint        = {2505.05848},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2505.05848}
 }
 ```
 
